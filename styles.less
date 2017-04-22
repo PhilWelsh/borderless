@@ -1,0 +1,143 @@
+@primary: #0065b0;
+@secondary: #88CCC6;
+@font-face {
+    font-family: borderless;
+    src: url(axis.bold.otf);
+    font-weight: bold;
+}
+
+a {
+    transition: .2s ease-in;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+body {
+    background: @primary;
+    color: white;
+    margin-top: 100px;
+}
+
+header {
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    background: white;
+    border-bottom: 1px solid white;
+    z-index: 9;
+}
+
+//BLUE AND WHITE THEME >>>
+header.blue {
+    background: @primary;
+    svg.brand {
+        path, polygon {
+            fill: white;
+        }
+    }
+    a {
+        color: white;
+        padding: 15px;
+        &:hover {
+            color: @primary;
+            background: white;
+        }
+    }
+}
+
+//BLUE AND WHITE THEME END <<<
+.header-left, .header-right {
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.header-left {
+    padding: 15px;
+}
+
+svg.brand {
+    height: 72px;
+}
+
+.navbar, ul {
+    margin: 0;
+}
+
+.navbar {
+    ul {
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
+        li {
+            display: inline-block;
+        }
+    }
+    a {
+        display: block;
+        padding: 15px;
+        color: @primary;
+        position: relative;
+        &:after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 0px;
+            left: 0;
+            bottom: 0;
+            background: @secondary;
+            transition: all .5s;
+        }
+        &:hover {
+            color: white;
+            background: @primary;
+            &:after {
+                height: 5px;
+            }
+        }
+    }
+}
+
+.cta, .jumbotron {
+    text-align: center;
+}
+
+.jumbotron {
+    background: @primary;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    padding: 150px;
+    margin: 0;
+    h1 {
+        font-family: borderless;
+        text-transform: uppercase;
+    }
+}
+
+.intro img {
+    width: 100%;
+    text-align: center;
+}
+
+.cta {
+    padding: 40px;
+    background: white;
+    a {
+        padding: 5px;
+        background: @primary;
+        color: white;
+        border: 2px solid black;
+    }
+}
+
+.breakdown-col {
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    img {
+        width: 250px;
+        border-radius: 50%;
+        height: 250px;
+    }
+}
